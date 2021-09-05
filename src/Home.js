@@ -18,20 +18,20 @@ const Home = () => {
     setBlogs(newBlogs);
   };
 
-  // runs on every render
-  // useEffect(() => {
-  //   console.log("use effect ran");
-  // });
+  const [name, setName] = useState("John");
 
-  // [] -> empty dependency array
-  //    -> assures the function runs only once
+  // watches name variable
+  // runs on every change on the variable
   useEffect(() => {
     console.log("use effect ran");
-  }, []);
+    console.log("name changed to: ", name);
+  }, [name]);
 
   return (
     <div className="home">
       <BlogList blogs={blogs} title="All Blogs!" handleDelete={handleDelete} />
+      <button onClick={() => setName("Johngwapo")}>change name</button>
+      <p>name: {name}</p>
     </div>
   );
 };
