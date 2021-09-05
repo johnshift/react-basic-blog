@@ -19,9 +19,15 @@ const Home = () => {
   };
 
   // runs on every render
+  // useEffect(() => {
+  //   console.log("use effect ran");
+  // });
+
+  // [] -> empty dependency array
+  //    -> assures the function runs only once
   useEffect(() => {
     console.log("use effect ran");
-  });
+  }, []);
 
   return (
     <div className="home">
